@@ -27,6 +27,7 @@
                 init: function () {
                     var marker = this.el;
                     this.url = document.querySelector("#lineURL");
+                    console.log(this.url);
 
                     marker.addEventListener('markerFound', function () {
                         this.toggle = true;
