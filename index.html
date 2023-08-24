@@ -23,7 +23,7 @@
                 },
             });
 
-            AFRAME.registerComponent('clickHandler', {
+            AFRAME.registerComponent('clickhandler', {
                 init: function () {
                     var marker = this.el;
                     this.url = document.querySelector("#lineURL");
@@ -81,7 +81,7 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
-                clickHandler
+                clickhandler
             >
                 <a-image
                     id="lineURL"
