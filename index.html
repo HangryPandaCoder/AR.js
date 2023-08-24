@@ -25,7 +25,8 @@
 
             AFRAME.registerComponent('clicker', {
                 init: function () {
-                    this.el.addEventListener('click', function () {
+                    this.url = document.querySelector("#lineURL");
+                    this.url.addEventListener('click', function () {
                         window.open("https://line.me/R/ti/p/%40510nmajk");
                     });
                 },
@@ -70,6 +71,7 @@
                 id="markerA"
             >
                 <a-image
+                    id="lineURL"
                     src="assets/Congratulations.jpg"
                     scale="1 1 1"
                     class="clickable"
