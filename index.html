@@ -23,16 +23,21 @@
                 },
             });
 
-            AFRAME.registerComponent('clicker', {
+            AFRAME.registerComponent('clickHandler', {
                 init: function () {
-                    this.mark = document.querySelector("#animated-marker");
-                    this.mark.addEventListener('markerFound', function () {
-                        this.el.addEventListener('click', () => {
+                    var marker = this.el;
+                    this.url = document.querySelector("#lineURL");
+
+                    marker.addEventListener('markerFound', function () {
+                        this.toggle = true;
+                        this.url.addEventListener('click', function (){
                             window.open("https://line.me/R/ti/p/%40510nmajk");
                         });
                     }.bind(this));
-                    this.mark.addEventListener('markerLost', function () {
-                        this.el.removeEventListener('click', () => {
+
+                    marker.addEventListener('markerLost', function () {
+                        this.toggle = false;
+                        this.url.removeEventListener('click', function (){
                             window.open("https://line.me/R/ti/p/%40510nmajk");
                         });
                     }.bind(this));
@@ -75,6 +80,7 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
+                clickHandler
             >
                 <a-image
                     id="lineURL"
@@ -83,7 +89,6 @@
                     class="clickable"
                     rotation="-90 0 0"
                     gesture-handler
-                    clicker
                 ></a-image>
             </a-marker>
             <!--
