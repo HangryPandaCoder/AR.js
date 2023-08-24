@@ -25,8 +25,7 @@
 
             AFRAME.registerComponent('clicker', {
                 init: function () {
-                    this.url = document.querySelector("#lineURL");
-                    this.url.addEventListener('click', function () {
+                    this.el.addEventListener('click', () {
                         window.open("https://line.me/R/ti/p/%40510nmajk");
                     });
                 },
